@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catedral Metropolitana - São Paulo - SP</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- WhatsApp Flutuante -->
+    <div class="whatsapp-float" id="whatsappfloat">
+        <a href="#" id="whatsappLink" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-badge" id="whatsappBadge" style="display: none">1</span>
+        </a>
+        <div class="whatsapp-tooltip">
+            Fale conosco pelo WhatsApp
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-church"></i> Catedral Metropolitana</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="#transmissao">Ao Vivo</a></li>
+                <li><a href="#liturgia">Liturgia</a></li>
+                <li><a href="#confessionario">Confissão</a></li>
+                <li><a href="#doacoes">Doações</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#mapa">Como Chegar</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Bem-vindo à Catedral Metropolitana</h2>
+            <p>"Alegra-te, cheia de graça, o Senhor é contigo."</p>
+            <a href="#sobre" class="btn">Conheça nossa história</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre a Catedral</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>Um lugar de paz, fé e devoção à Mãe de Deus. 
+                    A Catedral Metropolitana Nossa Senhora da Assunção 
+                    é um ponto de encontro para fiéis que buscam conforto espiritual
+                    e comunidade.</p>
+                    <p>Com arquitetura inspiradora e uma comunidade acolhedora, 
+                        celebramos diariamente a palavra de Deus e os sacramentos.</p>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="imgs/Brazil-Pope-Latin-America.jpg" alt="Interior da Igreja">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="horarios" class="horarios">
+        <div class="container">
+            <h2 class="section-title">Horários das Celebrações</h2>
+            <div class="horarios-grid">
+                <div class="horario-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Missas Diárias</h3>
+                    <p>Segunda a Sexta: 12h e 18h</p>
+                    <p>Sábado: 18h</p>
+                </div>
+                <div class="horario-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Domingo</h3>
+                    <p>8h, 10h, 12h, 18h e 20h</p>
+                </div>
+                <div class="horario-card">
+                    <i class="fas fa-hands"></i>
+                    <h3>Confissões</h3>
+                    <p>Diariamente: 30min antes das missas</p>
+                    <p>ou com agendamento</p>
+                </div>
+                <div class="horario-card">
+                    <i class="fas fa-hands"></i>
+                    <h3>Batismos | Casamentos</h3>
+                    <p>Entrar em contato com a ArqueDiocese, para maiores informações</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Transmissão ao Vivo -->
+    <section id="transmissao" class="transmissao">
+        <div class="container">
+            <h2 class="section-title">Transmissão ao Vivo</h2>
+            
+            <div class="player-container">
+                <div class="live-status" id="liveStatus">
+                    <span class="live-badge" id="liveBadge">🔴 AO VIVO</span>
+                    <span class="live-title" id="liveTitle">Missa ao Vivo - Participe!</span>
+                </div>
+                <div class="video-wrapper">
+                    <iframe 
+                        id="youtubePlayer"
+                        src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO?autoplay=0&mute=0&enablejsapi=1"
+                        title="Transmissão ao vivo - Catedral Metropolitana"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Liturgia -->
+    <section id="liturgia" class="liturgia">
+        <div class="container">
+            <h2 class="section-title">Liturgia do Dia</h2>
+
+            <div class="liturgia-controls">
+                <div class="data-selector">
+                    <button id="prevDay" class="date-nav"><i class="fas fa-chevron-left"></i></button>
+                    <div class="current-date">
+                        <input type="date" id="liturgiaDate" class="date-picker">
+                        <span id="displayDate" class="display-date"></span>
+                    </div>
+                    <button id="nextDay" class="date-nav"><i class="fas fa-chevron-right"></i></button>
+                    <button id="todayBtn" class="today-btn">Hoje</button>
+                </div>
+            </div>
+
+            <div class="liturgia-container">
+                <div class="liturgia-card santo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <h3>Santo do Dia</h3>
+                    <div id="santoContent" class="santo-content">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+
+                <div class="liturgia-card leituras-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bible"></i>
+                    </div>
+                    <h3>Leituras do Dia</h3>
+                    <div id="leiturasContent" class="leituras-content">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+
+                <div class="liturgia-card info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Informações Litúrgicas</h3>
+                    <div id="infoContent" class="info-content">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+
+                <div class="liturgia-card evangelho-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <h3>Evangelho do Dia</h3>
+                    <div id="evangelhoContent" class="evangelho-content">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reflexao-card">
+                <div class="reflexao-header">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Reflexão do Dia</h3>
+                </div>
+                <div id="reflexaoContent" class="reflexao-content">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Confessionário Virtual -->
+    <section id="confessionario" class="confessionario">
+        <div class="container">
+            <h2 class="section-title">Confessionário Virtual</h2>
+            <p class="confessionario-subtitle">Agende sua confissão com nosso padre</p>
+
+            <div class="confessionario-container">
+                <div class="info-confessionario">
+                    <div class="info-card">
+                        <i class="fas fa-cross"></i>
+                        <h3>Sacramento da Reconciliação</h3>
+                        <p>"Aquele que está arrependido de seus pecados encontra no confessionário o abraço misericordioso do Pai."</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horários de Confissão</h3>
+                        <ul>
+                            <li><strong>Segunda a Sexta:</strong> 30 min antes das missas (12h e 18h)</li>
+                            <li><strong>Sábado:</strong> 16h às 17h30</li>
+                            <li><strong>Domingo:</strong> 7h às 8h | 17h às 18h</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Sigilo Total</h3>
+                        <p>O segredo da confissão é inviolável. Seu agendamento é totalmente sigiloso.</p>
+                    </div>
+                </div>
+
+                <div class="form-confessionario">
+                    <h3><i class="fas fa-calendar-check"></i> Agende sua Confissão</h3>
+                    
+                    <form id="formConfessionario">
+                        <div class="form-group">
+                            <label for="confNome">Seu nome <span>(opcional)</span></label>
+                            <input type="text" id="confNome" placeholder="Deixe em branco para anônimo">
+                            <small>Se preferir, pode manter o anonimato</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confWhatsapp">Seu WhatsApp <span>(para lembrete)</span></label>
+                            <input type="tel" id="confWhatsapp" placeholder="(11) 99999-9999" required>
+                            <small>Receberá um lembrete no dia da confissão</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confData">Escolha a data</label>
+                            <input type="date" id="confData" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confHorario">Escolha o horário</label>
+                            <select id="confHorario" required>
+                                <option value="">Selecione um horário</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confObservacao">Observação <span>(opcional)</span></label>
+                            <textarea id="confObservacao" rows="3" placeholder="Alguma observação que queira fazer? (ex: primeira confissão)"></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" id="confAnonimo">
+                                Desejo permanecer anônimo (nome não será chamado)
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-agendar">
+                            <i class="fas fa-check-circle"></i> Agendar Confissão
+                        </button>
+                    </form>
+
+                    <div id="msgConfirmacao" class="msg-confirmacao" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Confissão Agendada!</h4>
+                        <p>Você receberá um lembrete no WhatsApp no dia da confissão.</p>
+                        <button onclick="location.reload()">Agendar outra</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-confessionario">
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span id="totalAgendamentos">0</span>
+                    <p>Confissões agendadas este mês</p>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span id="proximoHorario">--:--</span>
+                    <p>Próxima confissão disponível</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Doações -->
+    <section id="doacoes" class="doacoes">
+        <div class="container">
+            <h2 class="section-title"> Faça sua Doação</h2>
+            <p class="doacoes-subtitle">Sua contribuição ajuda a manter nossas atividades e projetos</p>
+
+            <div class="doacoes-container">
+                <div class="valores-sugeridos">
+                    <h3><i class="fas fa-hand-holding-heart"></i> Valores Sugeridos</h3>
+                    <div class="valores-grid">
+                        <button class="valor-btn" data-valor="10">R$ 10</button>
+                        <button class="valor-btn" data-valor="20">R$ 20</button>
+                        <button class="valor-btn" data-valor="50">R$ 50</button>
+                        <button class="valor-btn" data-valor="100">R$ 100</button>
+                        <button class="valor-btn" data-valor="custom">Outro valor</button>
+                    </div>
+                    
+                    <div class="valor-personalizado" id="valorPersonalizado" style="display: none;">
+                        <input type="number" id="valorOutro" placeholder="Digite o valor (R$)" min="1" step="1">
+                    </div>
+
+                    <div class="tipo-doacao">
+                        <label class="radio-label">
+                            <input type="radio" name="tipoDoacao" value="unica" checked>
+                            <span><i class="fas fa-check-circle"></i> Doação Única</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tipoDoacao" value="recorrente">
+                            <span><i class="fas fa-calendar-alt"></i> Doação Mensal</span>
+                        </label>
+                    </div>
+
+                    <button id="gerarPixBtn" class="btn-doar">Gerar QR Code PIX</button>
+                </div>
+
+                <div class="pix-container">
+                    <div class="qr-code-area" id="qrCodeArea">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Selecione um valor e gere o QR Code</p>
+                        </div>
+                    </div>
+                    <div class="chave-pix" id="chavePixArea" style="display: none;">
+                        <p><strong> Chave PIX (Copia e Cola)</strong></p>
+                        <div class="chave-container">
+                            <code id="chavePix">00020126360014BR.GOV.BCB.PIX0114contato@catedral.com520400005303986540510.005802BR5925Catedral Metropolitana6009SAO PAULO62070503***6304B2A3</code>
+                            <button id="copiarChave" class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="campanhas">
+                <h3><i class="fas fa-star-of-life"></i> Campanhas Especiais</h3>
+                <div class="campanhas-grid">
+                    <div class="campanha-card">
+                        <i class="fas fa-church"></i>
+                        <h4>Manutenção da Igreja</h4>
+                        <p>Ajude na conservação do nosso templo</p>
+                        <span class="meta">Meta: R$ 5.000</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                        <button class="btn-campanha" data-valor="50">Doar para esta causa</button>
+                    </div>
+                    <div class="campanha-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Ação Social</h4>
+                        <p>Alimentação para famílias necessitadas</p>
+                        <span class="meta">Meta: R$ 3.000</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%;"></div>
+                        </div>
+                        <button class="btn-campanha" data-valor="30">Doar para esta causa</button>
+                    </div>
+                    <div class="campanha-card">
+                        <i class="fas fa-child"></i>
+                        <h4>Catequese e Juventude</h4>
+                        <p>Material para catequese infantil</p>
+                        <span class="meta">Meta: R$ 2.000</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%;"></div>
+                        </div>
+                        <button class="btn-campanha" data-valor="25">Doar para esta causa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="noticias" class="noticias">
+    <div class="container">
+        <h2 class="section-title">Últimas Notícias</h2>
+        <div class="noticias-grid">
+            <article class="noticia-card">
+                <img src="https://placehold.co/600x400/f0ece6/c9a959?text=Noticia+1" alt="Notícia 1">
+                <div class="noticia-content">
+                    <h3>Cardeal Dom Odilo Pedro Scherer visita o papa em 2023</h3>
+                    <p>Confira os assuntos tratados com o Sumo Pontifice em Roma...</p>
+                    <button type="button" class="btn-small" data-id="1">📰 Leia mais</button>
+                </div>
+            </article>
+            <article class="noticia-card">
+                <img src="https://placehold.co/600x400/f0ece6/c9a959?text=Noticia+2" alt="Notícia 2">
+                <div class="noticia-content">
+                    <h3>Igreja escolhe o sumo Pontifice</h3>
+                    <p>Confira mais informação sobre o conclave que elegeu o novo 
+                        Sumo Pontifice: Papa Leão!</p>
+                    <button type="button" class="btn-small" data-id="2">📰 Leia mais</button>
+                </div>
+            </article>
+            <article class="noticia-card">
+                <img src="https://placehold.co/600x400/f0ece6/c9a959?text=Noticia+3" alt="Notícia 3">
+                <div class="noticia-content">
+                    <h3>Vaticano Confirma a Morte do Pontifice</h3>
+                    <p>Morre o Sumo Romano Pontifice Papa Francisco Vaticano confirma sua morte...</p>
+                    <button type="button" class="btn-small" data-id="3">📰 Leia mais</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de Fotos</h2>
+            <div class="galeria-grid">
+                <img src="/imgs/cripta.png" alt="Foto da Igreja 1">
+                <img src="/imgs/imagem.png" alt="Foto da Igreja 2">
+                <img src="/imgs/Catedral-da-Se-Interior-1.png" alt="Foto da Igreja 3">
+                <img src="/imgs/OIP (4).png" alt="Foto da Igreja 4">
+                <img src="/imgs/sao-paulo-catedral-3.jpg" alt="Foto da Igreja 5">
+                <img src="/imgs/construcao.webp" alt="Foto da Igreja 6">
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contato-container">
+                <form id="contactForm"
+                      action="https://formspree.io/f/xnjlrkel"
+                      method="POST"
+                      class="form-contato">
+                      
+                    <input type="hidden" name="_next" value="#">
+                    <input type="hidden" name="_captcha" value="true">
+
+                    <input type="text" name="nome" id="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem ou pedido de oração..." required></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                    <div id="formMensagem" class="form-mensagem"></div>
+                </form>
+                <div class="info-contato">
+                    <h3>Onde Estamos:</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Praça da Sé - São Paulo/SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> catedral@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Mapa de Localização -->
+    <section id="mapa" class="mapa">
+        <div class="container">
+            <h2 class="section-title">Onde Estamos</h2>
+            <p class="mapa-subtitle">Visite-nos. Estamos localizados no coração de São Paulo.</p>
+
+            <div class="mapa-container">
+                <div class="mapa-iframe">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.6343427!3d-23.5512802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59abb2b2eef1%3A0xfdb32e67a44103f5!2sCatedral%20Metropolitana%20Nossa%20Senhora%20da%20Assun%C3%A7%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1745864800000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 20px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="mapa-info">
+                    <div class="info-card-mapa">
+                        <i class="fas fa-church"></i>
+                        <h4>Catedral Metropolitana</h4>
+                        <p>Nossa Senhora da Assunção</p>
+                    </div>
+
+                    <div class="info-card-mapa">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Endereço</h4>
+                        <p>Praça da Sé, s/n - Sé</p>
+                        <p>São Paulo - SP, 01001-000</p>
+                    </div>
+
+                    <div class="info-card-mapa">
+                        <i class="fas fa-clock"></i>
+                        <h4>Horário de Funcionamento</h4>
+                        <p><strong>Igreja:</strong> Todos os dias, 7h às 19h</p>
+                        <p><strong>Secretaria:</strong> Segunda a Sexta, 9h às 17h</p>
+                        <p><strong>Missas:</strong> Consulte a seção "Horários"</p>
+                    </div>
+
+                    <div class="info-card-mapa">
+                        <i class="fas fa-car"></i>
+                        <h4>Como Chegar</h4>
+                        <p><strong>Metrô:</strong> Estação Sé (Linhas 1-Azul e 3-Vermelha)</p>
+                        <p><strong>Ônibus:</strong> Diversas linhas param na Praça da Sé</p>
+                        <p><strong>Estacionamento:</strong> Shopping Sé (R$ 10 por 2h)</p>
+                    </div>
+
+                    <div class="mapa-buttons">
+                        <a href="https://maps.google.com/?q=Praça+da+Sé,+São+Paulo" target="_blank" class="btn-mapa">
+                            <i class="fas fa-directions"></i> Como Chegar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Catedral Metropolitana - Todos os direitos reservados</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Notícias -->
+<div id="modalNoticia" class="modal-noticia">
+    <div class="modal-noticia-content">
+        <div class="modal-noticia-header">
+            <h3 id="modalTitulo">Título da Notícia</h3>
+            <button class="modal-noticia-close" onclick="fecharModal()">&times;</button>
+        </div>
+        <img id="modalImagem" class="modal-noticia-img" src="" alt="Imagem da notícia">
+        <div class="modal-noticia-body">
+            <div class="modal-noticia-data">
+                <i class="fas fa-calendar-alt"></i>
+                <span id="modalData"></span>
+            </div>
+            <p id="modalTexto" class="modal-noticia-texto"></p>
+        </div>
+        <div class="modal-noticia-footer">
+            <button class="btn-compartilhar" onclick="compartilharNoticia()">
+                <i class="fab fa-whatsapp"></i> Compartilhar
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
