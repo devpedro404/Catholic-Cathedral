@@ -9,7 +9,7 @@
 ### 🖥️ Site Principal
 
 <p align="center">
-  <img src="screenshots/home-desktop.png" alt="Página Inicial - Desktop" width="800">
+  <img src="catedral.jpg" alt="Página Inicial - Desktop" width="800">
   <br>
   <em>Página inicial da Catedral Metropolitana - Versão Desktop</em>
 </p>
